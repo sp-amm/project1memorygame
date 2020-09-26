@@ -1,0 +1,18 @@
+.header{
+    position: relative;
+    background-color: blue;
+    color: white;
+    text-align: center;
+   /* width: 40%;
+    height: 50%; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100px;
+   font-size: large;
+
+   border: solid 3px brown;
+}
+#button {
+    color: red;
+}

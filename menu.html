@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="menustyle.css">
     <link rel="stylesheet" href="assets/css/foundation.css"/>
+    <script src="assets\js\plugins\foundation.core.js"></script>
+    <script src="assets\js\plugins\foundation.responsiveMenu.js"></script>
+    <script src="assets\js\plugins\foundation.util.triggers.js"></script>
+    <script src="assets\js\plugins\foundation.util.mediaQuery.js"></script>
+    <script src="assets\js\plugins\foundation.responsiveToggle.js"></script>
+    <script src="assets\js\plugins\foundation.util.mediaQuery.js"></script>
+    <script src="assets\js\plugins\foundation.util.motion.js"></script>
     <title>Part time rug bugs menu</title>
 </head>
 <body>
-    <div class="header">
+   <!--  <div class="header">
        <span>Part time Rag Bugs Memory Game</span> 
     </div>
     <div class="grid-container">
@@ -18,7 +25,7 @@
                 <p><strong></strong> </p>
               </div>
             </div>
-          </div>
+          </div> -->
         <!-- <div id="menu">
           <div class="grid-x grid-padding-x ">
             <div class="large-6 medium-6 cell">
@@ -38,7 +45,7 @@
               </div>
           </div>
         </div> -->
-        <div class="gameBoard">
+       <!--  <div class="gameBoard">
             <div class="grid-x padding-x">
                 <div class ="large-12 cell card">
                     Gameboard                   
@@ -47,6 +54,31 @@
         </div>
 
     <p> Powered by Giphy</p>
+    </div> -->
+
+    <div class="title-bar" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title">Menu</div>
     </div>
+    
+    <div class="top-bar" id="example-animated-menu" data-animate="hinge-in-from-top spin-out">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text">Site Title</li>
+          <li>
+            <a href="#">One</a>
+
+            <!-- <ul class="menu vertical">
+              <li><a href="#">One</a></li>
+              <li><a href="#">Two</a></li>
+              <li><a href="#">Three</a></li>
+            </ul> -->
+          </li>
+          <li><a href="#">Two</a></li>
+          <li><a href="#">Three</a></li>
+        </ul>
+      </div>
+    </div>
+    
 </body>
 </html>

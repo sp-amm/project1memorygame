@@ -15,18 +15,22 @@ function flipCard() {
 
 
 if (hasFlippedCard===false){
+
     //first click
     hasFlippedCard = true;
     firstCard = this;
     console.log(this);
 }
 else {
+
     //second click
     secondCard = this;
     console.log(this);
    
     checkMatch();
+
 }
+
 }
 
 function checkMatch (){
@@ -38,6 +42,7 @@ function checkMatch (){
         
 
         resetBoardstate();
+
     } else {
         lockBoard = true;
         setTimeout(() => {
@@ -61,6 +66,22 @@ function resetBoardstate(){
     });
 })(); //immediate function
 
+//Timer
+var totalseconds = 0;
+var secondsElapsed = 0;
+var interval;
+function startTimer(){   
+    let counter = 0;
+    let timerInterval = setInterval(function(){
+        document.getElementById("timer").innerHTML = counter
+        console.log(`${counter}`);
+        counter ++;
+        if(counter == 100){
+            clearInterval(timerInterval);
+        }
+    },1000);
+}
+startTimer()
 
 //Pseudocode
 

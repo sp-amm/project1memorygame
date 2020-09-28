@@ -66,6 +66,7 @@ nav .menu-icon span{
 @media (max-width: 1140px){
   nav{
     padding: 0px;
+    position: absolute;
   }
   nav .logo{
     flex: 2;
@@ -141,9 +142,10 @@ nav .logo.space{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
 }
 
-.content header{
+/* .content header{
   font-size: 30px;
   font-weight: 700;
 }
@@ -153,6 +155,6 @@ nav .logo.space{
 }
 .space{
   margin: 10px 0;
-}
-
+} */
+ 
 

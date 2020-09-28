@@ -36,11 +36,6 @@ function checkMatch (){
         firstCard.removeEventListener('click', flipCard)
         secondCard.removeEventListener('click', flipCard)
         
-        // firstCard.classList.add('hidden')
-        // firstCard.classList.remove("memoryCard")
-        // secondCard.classList.add('hidden')
-        // secondCard.classList.remove("memoryCard")
-        // console.log("working")
 
         resetBoardstate();
     } else {

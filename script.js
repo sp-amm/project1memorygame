@@ -1,11 +1,16 @@
 
 let hasFlippedCard = false;
+let lockBoard = false; //stops user spam clicking
 let firstCard;
 let secondCard;
 
+const cards = document.querySelectorAll('.memoryCard');
+cards.forEach(card => card.addEventListener('click',flipCard));
 
 //flip card function
-$('.memoryCard').click(function(){
+function flipCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
     this.classList.toggle('flip')
 
 
@@ -17,21 +22,51 @@ if (hasFlippedCard===false){
 }
 else {
     //second click
-    hasFlippedCard = false;
     secondCard = this;
     console.log(this);
-   //add Jquery selector 
+   
+    checkMatch();
+}
+}
+
+function checkMatch (){
     if (firstCard.id === secondCard.id){
         //remove class temp 
         //turn off event listener
-        firstCard.classList.add('hidden')
-        firstCard.classList.remove("memoryCard")
-        secondCard.classList.add('hidden')
-        secondCard.classList.remove("memoryCard")
-        console.log("working")
-    } 
+        firstCard.removeEventListener('click', flipCard)
+        secondCard.removeEventListener('click', flipCard)
+        
+        // firstCard.classList.add('hidden')
+        // firstCard.classList.remove("memoryCard")
+        // secondCard.classList.add('hidden')
+        // secondCard.classList.remove("memoryCard")
+        // console.log("working")
+
+        resetBoardstate();
+    } else {
+        lockBoard = true;
+        setTimeout(() => {
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+        
+        resetBoardstate();
+    }, 1500);
 }
-})
+}
+function resetBoardstate(){
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+} //resets board state after cards have been selected 
+
+//runs on start up
+(function shuffle(){
+    cards.forEach(card => {
+        let random = Math.floor(Math.random() * 12);
+        card.style.order = random;
+    });
+})(); //immediate function
+
+
 //Pseudocode
 
 //Easy- 10 cards w/Timer counting up

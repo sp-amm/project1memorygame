@@ -121,3 +121,4 @@ function resetBoardstate(){
             
             };
        });
+//how many are in there 

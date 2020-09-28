@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">5</p>
+    <button onclick="clock(); document.getElementById('demo').innerHTML='5';">Start counter</button>
+    <button onclick="clearInterval(myTimer);">Stop counter</button>
+
+<div>
+    <div>Registration closes in <span id="time">05:00</span> minutes!</div>
+
+</div>
+<script>
+   var myTimer;
+   function clock() {
+     myTimer = setInterval(myClock, 1000);
+     var c = 10;
+
+     function myClock() {
+       document.getElementById("demo").innerHTML = --c;
+       if (c == 0) {
+         clearInterval(myTimer);
+         alert("Reached zero");
+       }
+     }
+   }
+
+
+
+   function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes = 60 * 5,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+   
+
+
+</script>
+</body>
+</html>

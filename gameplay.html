@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>First Group Project</title>
+    <link rel="stylesheet" href="gameplay.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <nav>
+      <div class="menu-icon">
+        <span class="fas fa-bars"></span></div>
+        <div class="logo"><span id="partTime">Part-time</span> Rug Bugs</div>
+      <div class="nav-items">
+        <li><a href="#">Rules</a></li>
+        <li><a href="#">Score</a></li>
+        <li><a href="#">TIME</a></li>
+        <li><a href="#">MOVES</a></li>
+        <li><a href="#">CARD REMAIN</a></li>
+        <li><a href="gameplay.html">RETURN</a></li>
+      </div>
+</nav>
+ <!--  <div class="timer">
+    <span id="minutes">mm</span> :
+    <span id="seconds">ss</span>
+
+
+  </div> -->
+
+    <div class="content">
+      <header class="space">Present cards here</header>
+</div>
+
+<footer>
+
+
+
+
+
+
+
+</footer>
+
+<script>
+    //Script for Navbar
+        const menuBtn = document.querySelector(".menu-icon span");
+        const items = document.querySelector(".nav-items");
+        
+        menuBtn.onclick = ()=>{
+          items.classList.add("active");
+          menuBtn.classList.add("hide");
+    } 
+
+    /*timer*/
+   
+  </script>
+
+  </body>
+</html>

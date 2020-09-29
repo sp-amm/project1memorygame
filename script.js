@@ -62,6 +62,45 @@ function resetBoardstate(){
 })(); //immediate function
 
 
+    //giphy api key = JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb
+    
+    //var gameNumber = "6";
+
+    var queryurl = "https://api.giphy.com/v1/gifs/trending?api_key=JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb&tag=&rating=g&limit=6";
+
+    $.ajax({
+        url: queryurl,
+        type: "GET",
+    
+
+        }).then(function(response) {
+            console.log(response);
+            //var imageUrl = response.data.images.fixed_width_small.url
+            var results = response.data
+            console.log(results);
+            //function showImages(){
+           for (var i = 0; i < results.length; i++) {
+                
+                //displaying the called images
+                var imageUrl = results[i].images.fixed_width_small.url
+                console.log(imageUrl);
+                //storing giphy images
+                localStorage.setItem("image" + i, imageUrl);               
+                //setting the images in the html
+                console.log("#image" + i);
+                
+                //var cardImage = $("<img>");
+                //cardImage.attr("src", imageUrl);
+                //$(".card").append(cardImage);
+
+                setImage();
+            
+            };
+       });
+
+       setImage(){
+        $("#image"+ i).find(".front-face").attr("src", localStorage.getItem("image"+i)); 
+       };
 //Pseudocode
 
 //Easy- 10 cards w/Timer counting up
@@ -89,35 +128,3 @@ function resetBoardstate(){
     //all cards hidden then end game
     //show score + remaining time
     //button restart + return to menu
-
-    //giphy api key = JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb
-    
-    //var gameNumber = "6";
-
-    var queryurl = "https://api.giphy.com/v1/gifs/trending?api_key=JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb&tag=&rating=g&limit=25";
-
-    $.ajax({
-        url: queryurl,
-        type: "GET",
-    
-
-        }).then(function(response) {
-            console.log(response);
-            //var imageUrl = response.data.images.fixed_width_small.url
-            var results = response.data
-            console.log(results);
-            //function showImages(){
-           for (var i = 0; i < results.length; i++) {
-                
-                //displaying the called images
-                var imageUrl = results[i].images.fixed_width_small.url
-                console.log(imageUrl);
-                var cardImage = $("<img>");
-                cardImage.attr("src", imageUrl);
-                $(".card").append(cardImage);
-
-                //storing giphy images
-                localStorage.setItem("Image: " + i, imageUrl);
-            
-            };
-       });

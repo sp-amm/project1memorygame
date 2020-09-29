@@ -206,11 +206,11 @@ a.pure-button-primary {
 }
 
 .small-head{
-    font-size: x-large;
+    font-size: xx-large;
     padding-bottom: 0%;
     font-family: 'Dancing Script', cursive;
     position: relative;
-    right: 30%;
+    
 }
 
 /* This is the class used for the main content headers (<h1>) */
@@ -248,6 +248,7 @@ a.pure-button-primary {
     position: fixed;
     bottom: 0;
     width: 100%;
+    color: white;
 }
 
 /*

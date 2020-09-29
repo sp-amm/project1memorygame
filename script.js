@@ -83,7 +83,7 @@ function resetBoardstate(){
                 
                 //displaying the called images
                 var imageUrl = results[i].images.fixed_width_small.url
-                console.log(imageUrl);
+                //console.log(imageUrl);
                 //storing giphy images
                 localStorage.setItem("image" + i, imageUrl);               
                 //setting the images in the html
@@ -98,9 +98,11 @@ function resetBoardstate(){
             };
        });
 
-       setImage(){
-        $("#image"+ i).find(".front-face").attr("src", localStorage.getItem("image"+i)); 
-       };
+      function setImage(){
+        $("#image"+ i).map(".front-face").attr("src", localStorage.getItem("image"+i)); 
+      };
+
+      
 //Pseudocode
 
 //Easy- 10 cards w/Timer counting up

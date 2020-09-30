@@ -69,7 +69,7 @@ function shuffle(){
         card.style.order = random;
     });
 
-})(); //immediate function
+}; //immediate function */
 
 
 

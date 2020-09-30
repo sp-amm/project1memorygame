@@ -1,6 +1,6 @@
 
 .gameBoard {
-    width: 500px;
+    width: 100%;
     height: 500px;
     display: flex;
     flex-wrap: wrap;
@@ -16,12 +16,12 @@ img {
     width: 100px;
 }
 .memoryCard {
-    width: calc(25% - 10px);
-    height: 33% ;
+   /*  width: calc(25% - 10px); */
+    height: 50% ;
     position: relative;
     margin: 0px;
     transform: scale(1);
-    transform-style: preserve-3d;
+   transform-style: flat;
     transition: transform .5s;
     align-content: center;
     padding: 0;
@@ -30,7 +30,7 @@ img {
 
  @media screen and (max-width:1250px){
     .memoryCard{
-        width:20%;
+       /*  width:20%; */
         height: 33%;
         
     }

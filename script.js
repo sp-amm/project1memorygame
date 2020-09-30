@@ -64,9 +64,10 @@ function resetBoardstate(){
 
     //giphy api key = JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb
     
-    //var gameNumber = "6";
+    var gameNumber = 6;
+    var imgArray = [];
 
-    var queryurl = "https://api.giphy.com/v1/gifs/trending?api_key=JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb&tag=&rating=g&limit=6";
+    var queryurl = "https://api.giphy.com/v1/gifs/trending?api_key=JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb&tag=&rating=g&limit=" + gameNumber;
 
     $.ajax({
         url: queryurl,
@@ -83,26 +84,34 @@ function resetBoardstate(){
                 
                 //displaying the called images
                 var imageUrl = results[i].images.fixed_width_small.url
-                //console.log(imageUrl);
+                console.log(imageUrl);
                 //storing giphy images
                 localStorage.setItem("image" + i, imageUrl);               
                 //setting the images in the html
                 console.log("#image" + i);
-                
+                //$("#image"+ i, ".front-face").attr("src", imageUrl); 
                 //var cardImage = $("<img>");
                 //cardImage.attr("src", imageUrl);
                 //$(".card").append(cardImage);
 
-                setImage();
+
             
             };
        });
 
-      function setImage(){
-        $("#image"+ i).map(".front-face").attr("src", localStorage.getItem("image"+i)); 
-      };
+       //function to set the Giphy to the cards
+       function setImg(){
+        for (i=0; i <= gameNumber; i++){
+           
+            var imgLocation = localStorage.getItem("image" + i);
+            $(".image" + i + "-1").find(".front-face").attr("src", imgLocation);
+            $(".image" + i + "-2").find(".front-face").attr("src", imgLocation);
 
-      
+            }
+        };
+
+        setImg();
+
 //Pseudocode
 
 //Easy- 10 cards w/Timer counting up

@@ -17,19 +17,13 @@
         <div class="logo"><span id="partTime">Part-time</span> Rug Bugs</div>
       <div class="nav-items">
         <li><a href="#">Rules</a></li>
-        <li><a href="#">Score</a></li>
-        <li><a href="#">TIME</a></li>
-        <li><a href="#">MOVES</a></li>
-        <li><a href="#">CARD REMAIN</a></li>
+        <li><a href="#">Score</a><div id="score">0</div></li>
+        <li><a href="#">TIME</a><div id="timer">0</div></li>
+        <li><a href="#">MOVES</a><div id="moves">0</div></li>
+        <li><a href="#">CARD REMAIN</a><div id="remaining">12</div></li>
         <li><a href="gameplay.html">RETURN</a></li>
       </div>
 </nav>
- <!--  <div class="timer">
-    <span id="minutes">mm</span> :
-    <span id="seconds">ss</span>
-
-
-  </div> -->
 
 <div class="content">
   <section class="gameBoard">
@@ -92,16 +86,12 @@
       <img class="front-face" src="./assets/images/image6.jpg" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
+    
   </section>
 </div>
 
 <footer>
-
-
-
-
-
-
+<button class="reset" onclick="restartGame()"> Reset </button>
 
 </footer>
 

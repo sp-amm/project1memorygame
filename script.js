@@ -68,7 +68,10 @@ function shuffle(){
         let random = Math.floor(Math.random() * 12); //CHANGE THIS FOR OTHER LEVELS
         card.style.order = random;
     });
-}; //immediate function
+
+})(); //immediate function
+
+
 
 //Timer
 var timerInterval;
@@ -114,11 +117,12 @@ function restartGame(){
     }, 1000);
 }
 shuffle();
-    //giphy api key = JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb
     
-    //var gameNumber = "6";
-
-    var queryurl = "https://api.giphy.com/v1/gifs/trending?api_key=JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb&tag=&rating=g&limit=25";
+ //giphy api key = JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb
+    
+    var gameNumber = 6;
+    
+    var queryurl = "https://api.giphy.com/v1/gifs/trending?api_key=JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb&tag=&rating=g&limit=" + gameNumber;
 
     $.ajax({
         url: queryurl,
@@ -136,13 +140,22 @@ shuffle();
                 //displaying the called images
                 var imageUrl = results[i].images.fixed_width_small.url
                 console.log(imageUrl);
-                var cardImage = $("<img>");
-                cardImage.attr("src", imageUrl);
-                $(".card").append(cardImage);
-
                 //storing giphy images
-                localStorage.setItem("Image: " + i, imageUrl);
-            
+                localStorage.setItem("image" + i, imageUrl);               
+                //setting the images in the html
+                console.log("#image" + i);           
             };
        });
-//how many are in there 
+
+       //function to set the Giphy to the cards
+       function setImg(){
+        for (i=0; i <= gameNumber; i++){
+           
+            var imgLocation = localStorage.getItem("image" + i);
+            $(".image" + i + "-1").find(".front-face").attr("src", imgLocation);
+            $(".image" + i + "-2").find(".front-face").attr("src", imgLocation);
+
+            }
+        };
+
+        setImg();

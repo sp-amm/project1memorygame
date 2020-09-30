@@ -7,12 +7,13 @@ let secondCard;
 const cards = document.querySelectorAll('.memoryCard');
 cards.forEach(card => card.addEventListener('click',flipCard));
 
+
 //flip card function
 function flipCard() {
     if (lockBoard) return;
     if (this === firstCard) return;
     this.classList.toggle('flip')
-
+    
 
 if (hasFlippedCard===false){
 
@@ -20,6 +21,7 @@ if (hasFlippedCard===false){
     hasFlippedCard = true;
     firstCard = this;
     console.log(this);
+    moveCounter();
 }
 else {
 
@@ -28,7 +30,7 @@ else {
     console.log(this);
    
     checkMatch();
-
+    
 }
 
 }
@@ -40,22 +42,23 @@ function checkMatch (){
         firstCard.removeEventListener('click', flipCard)
         secondCard.removeEventListener('click', flipCard)
         
-
-        resetBoardstate();
+        tallyScore(); //Tallys the score
+        resetBoardstate(); //Resets the board
 
     } else {
         lockBoard = true;
         setTimeout(() => {
-        firstCard.classList.remove('flip');
+        firstCard.classList.remove('flip'); //removes event listner
         secondCard.classList.remove('flip');
         
-        resetBoardstate();
+        resetBoardstate(); //Resets the board 
     }, 1500);
 }
 }
 function resetBoardstate(){
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
+    
 } //resets board state after cards have been selected 
 
 //runs on start up
@@ -71,17 +74,35 @@ var totalseconds = 0;
 var secondsElapsed = 0;
 var interval;
 function startTimer(){   
-    let counter = 0;
+    let time = 0;
     let timerInterval = setInterval(function(){
-        document.getElementById("timer").innerHTML = counter
-        console.log(`${counter}`);
-        counter ++;
-        if(counter == 100){
+        document.getElementById("timer").innerHTML = time
+        time ++;
+        if(time == 100){
             clearInterval(timerInterval);
-        }
+        }                    
     },1000);
 }
 startTimer()
+
+//Move counter
+var moves=0;
+function moveCounter(){
+    moves += 1;
+    document.getElementById("moves").innerHTML = moves;
+}
+//score
+var score=0;
+function tallyScore(){
+    score +=1;
+    document.getElementById("score").innerHTML=score
+}
+
+function restartGame(){
+    location.reload();
+    //button that reloads game
+    //atm just refreshes the page
+}
 
 //Pseudocode
 

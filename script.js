@@ -104,6 +104,8 @@ function restartGame(){
     console.log("working")
     score = 0;
     document.getElementById("score").innerHTML = score;
+    moves = 0;
+    document.getElementById("moves").innerHTML = moves;
     time = 0;
     clearInterval(timerInterval);
     document.getElementById("timer").innerHTML = time;

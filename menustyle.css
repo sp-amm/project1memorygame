@@ -21,7 +21,8 @@ img {
     position: relative;
     margin: 0px;
     transform: scale(1);
-   transform-style: flat;
+    /*the code only works with preserve 3d*/
+   transform-style: preserve-3d;
     transition: transform .5s;
     align-content: center;
     padding: 0;
@@ -40,7 +41,7 @@ img {
 
 
 .memoryCard:active {
-    transform: scale(.97);
+    transform: scale(.1);
 }
 .back-face, .front-face {
     width: 100%;

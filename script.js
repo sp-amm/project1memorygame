@@ -3,14 +3,16 @@ let hasFlippedCard = false;
 let lockBoard = false; //stops user spam clicking
 let firstCard;
 let secondCard;
+var remain = 12; //CHANGE THIS FOR OTHERS
 
-const cards = document.querySelectorAll('.memoryCard');
-cards.forEach(card => card.addEventListener('click',flipCard));
+
+const cards = document.querySelectorAll('.memoryCard'); //selects all cards
+cards.forEach(card => card.addEventListener('click',flipCard)); //adds event listener for cards
 
 
 //flip card function
 function flipCard() {
-    if (lockBoard) return;
+    if (lockBoard) return; //locks board 
     if (this === firstCard) return;
     this.classList.toggle('flip')
     
@@ -28,19 +30,18 @@ else {
     //second click
     secondCard = this;
     console.log(this);
-   
-    checkMatch();
     
+    checkMatch();  
 }
-
 }
-
 function checkMatch (){
     if (firstCard.id === secondCard.id){
-        //remove class temp 
         //turn off event listener
         firstCard.removeEventListener('click', flipCard)
         secondCard.removeEventListener('click', flipCard)
+     
+        remain=remain -2; // removes from number from remaining cards
+        document.getElementById("remaining").innerHTML = remain; //pushes back to remaining cards
         
         tallyScore(); //Tallys the score
         resetBoardstate(); //Resets the board
@@ -52,7 +53,7 @@ function checkMatch (){
         secondCard.classList.remove('flip');
         
         resetBoardstate(); //Resets the board 
-    }, 1500);
+    }, 1000);
 }
 }
 function resetBoardstate(){
@@ -62,23 +63,21 @@ function resetBoardstate(){
 } //resets board state after cards have been selected 
 
 //runs on start up
-(function shuffle(){
+function shuffle(){
     cards.forEach(card => {
-        let random = Math.floor(Math.random() * 12);
+        let random = Math.floor(Math.random() * 12); //CHANGE THIS FOR OTHER LEVELS
         card.style.order = random;
     });
-})(); //immediate function
+}; //immediate function
 
 //Timer
-var totalseconds = 0;
-var secondsElapsed = 0;
-var interval;
+var timerInterval;
 function startTimer(){   
     let time = 0;
-    let timerInterval = setInterval(function(){
+        timerInterval = setInterval(function(){
         document.getElementById("timer").innerHTML = time
         time ++;
-        if(time == 100){
+        if(time == 1000){
             clearInterval(timerInterval);
         }                    
     },1000);
@@ -99,39 +98,22 @@ function tallyScore(){
 }
 
 function restartGame(){
-    location.reload();
-    //button that reloads game
-    //atm just refreshes the page
+    console.log("working")
+    score = 0;
+    document.getElementById("score").innerHTML = score;
+    time = 0;
+    clearInterval(timerInterval);
+    document.getElementById("timer").innerHTML = time;
+    remain= 12;
+    document.getElementById("remaining").innerHTML = remain;
+    cards.forEach(card => card.classList.remove('flip'));
+    setTimeout(() => {
+        shuffle();
+        cards.forEach(card => card.addEventListener('click',flipCard));
+        startTimer();
+    }, 1000);
 }
-
-//Pseudocode
-
-//Easy- 10 cards w/Timer counting up
-//Meduim- 16 cards w/Timer counting up 
-//Hard- 22 cards w/Timer counting up
-//beat the clock
-
-//on click, hide menu
-//shows rules
-
-//set gameboard
-    //start timer
-    //call API to card fronts
-    //store in cache/local storage
-    //using each image twice
-    //asign gifs at random
-
-//gameplay    
-    //count moves
-    //score displayed
-    //cards clicked
-    //two clicks
-    //if cards = same then hide +2 score (Reset clicks)
-    //if else cards = different -1 flip back (Reset clicks)
-    //all cards hidden then end game
-    //show score + remaining time
-    //button restart + return to menu
-
+shuffle();
     //giphy api key = JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb
     
     //var gameNumber = "6";

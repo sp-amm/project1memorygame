@@ -72,16 +72,16 @@ function shuffle(){
 }; //immediate function
 
 
-
-//Timer
+//Countdown timer for time trial
 var timerInterval;
 function startTimer(){   
-    let time = 0;
+    let time = 30; //Sets time
         timerInterval = setInterval(function(){
-        document.getElementById("timer").innerHTML = time
-        time ++;
-        if(time == 1000){
-            clearInterval(timerInterval);
+        document.getElementById("timer").innerHTML = time //Displays time
+        time --; //counts down
+        if(time == -1){ //If the time is zero
+            cards.forEach(card => card.removeEventListener('click',flipCard)); //Removes the event listener 
+            clearInterval(timerInterval); //Clears the interval
         }                    
     },1000);
 }

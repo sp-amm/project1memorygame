@@ -200,11 +200,12 @@ img {
 .resetbutton {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 .scorespacer{
-  margin: 20%;
+  margin: 10%;
 }
 
 .footer {

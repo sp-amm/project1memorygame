@@ -7,7 +7,7 @@ The extreme level has game over pop up when time expires.
 The game utilises two image apis. Giphy is displayed on the front face of the card when flipped. NASA's space photo
 of the day is displayed on the card back.
 
-<img src=images/menu.JPG>  
-<img src=assets/images/level3.JPG>  
-<img src=assets/images/extremegameover.JPG>  
-<img src=assets/images/level1.JPG>  
+<img src="assets/images/menu.JPG">  
+<img src="assets/images/level3.JPG">  
+<img src="assets/images/extremegameover.JPG">  
+<img src="assets/images/level1.JPG">  

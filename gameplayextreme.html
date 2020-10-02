@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>First Group Project</title>
-    <link rel="stylesheet" href="gameplay.css">
-    <link rel="stylesheet" href="menustyle.css">
-    <link rel="stylesheet" href="pure.css>"
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Pure CSS-->
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
-    
+    <!--Local CSS-->
+    <link rel="stylesheet" href="gameplay.css">
+    <link rel="stylesheet" href="menustyle.css">
+
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
   </head>
   <body>
 
-   <!--Nav bar
-   <div class="pure-g">
-    <div class="pure-u-1">
+   <!--Nav bar--> 
+
       <nav>
         <div class="menu-icon">
           <span class="fas fa-bars"></span>
         </div>
           <div class="logo"><span id="partTime">Part-time</span> Rug Bugs</div>
         <div class="nav-items">
-          <li><a href="#">Rules</a></li>
+          <!--<li><a href="#">Rules</a></li>-->
           <li><a href="#">Score</a><div id="score">0</div></li>
           <li><a href="#">TIME</a><div id="timer">0</div></li>
           <li><a href="#">MOVES</a><div id="moves">0</div></li>
@@ -34,153 +34,119 @@
           <li><a href="gameplay.html">RETURN</a></li>
         </div>
       </nav>
-    </div>
-    </div>--> 
+   
+   
 
-    <div class="header">
-        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-            <a class="pure-menu-heading" href="">Your Site</a>
-    
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tour</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sign Up</a></li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="splash-container">
-        <div class="splash">
-            <h1 class="splash-head">Big Bold Text</h1>
-            <p class="splash-subhead">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-            <p>
-                <a href="http://purecss.io" class="pure-button pure-button-primary">Get Started</a>
-            </p>
-        </div>
-    </div>
-    
-    <div class="content-wrapper">
-        <div class="content">
-            <h2 class="content-head is-center">Excepteur sint occaecat cupidatat.</h2>
-    
-            <div class="pure-g">
-                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-    
-                    <h3 class="content-subhead">
-                        <i class="fa fa-rocket"></i>
-                        Get Started Quickly
-                    </h3>
-                    <p>
-                        Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                    </p>
-                </div>
-                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                    <h3 class="content-subhead">
-                        <i class="fa fa-mobile"></i>
-                        Responsive Layouts
-                    </h3>
-                    <p>
-                        Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                    </p>
-                </div>
-                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                    <h3 class="content-subhead">
-                        <i class="fa fa-th-large"></i>
-                        Modular
-                    </h3>
-                    <p>
-                        Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                    </p>
-                </div>
-                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                    <h3 class="content-subhead">
-                        <i class="fa fa-check-square-o"></i>
-                        Plays Nice
-                    </h3>
-                    <p>
-                        Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-  <!--Score timer etc-->
-  <div class="pure-g scorespacer center">
-    <div class="l-box pure-u "> Score </div>
-    <div class="l-box pure-u"> Time </div>
-    <div class="l-box pure-u"> Moves </div>
-  </div>
 
 <div class="content">
   <div class="pure-g center">
-    <div class="pure-u-1">
-  <section class="gameBoard">
-    <div class="memoryCard image0-1" id="image1"> <!-- card 1 -->             
+  <div class="pure-u-1">
+  <section class="gameBoardExtreme">
+    <div class="memoryCardExtreme image0-1" id="image1"> <!-- card 1 -->             
       <img class="front-face" src="./assets/images/image1.jpg" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
 
-    <div class="memoryCard image0-2" id="image1"> <!-- card 2 -->             
+    <div class="memoryCardExtreme image0-2" id="image1"> <!-- card 2 -->             
       <img class="front-face" src="./assets/images/image1.jpg" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
 
-    <div class="memoryCard image1-1" id="image2"> <!-- card 3 -->             
+    <div class="memoryCardExtreme image1-1" id="image2"> <!-- card 3 -->             
       <img class="front-face" src="./assets/images/image2.png" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
 
-    <div class="memoryCard image1-2" id="image2"> <!-- card 4 -->            
+    <div class="memoryCardExtreme image1-2" id="image2"> <!-- card 4 -->            
       <img class="front-face " src="./assets/images/image2.png" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
 
-    <div class="memoryCard image2-1" id="image3"> <!-- card 5 -->
+    <div class="memoryCardExtreme image2-1" id="image3"> <!-- card 5 -->
       <img class="front-face" src="./assets/images/image3.jpg" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
 
-    <div class="memoryCard image2-2" id="image3"> <!-- card 6 -->
+    <div class="memoryCardExtreme image2-2" id="image3"> <!-- card 6 -->
       <img class="front-face" src="./assets/images/image3.jpg" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
 
-    <div class="memoryCard image3-1" id="image4"> <!-- card 7 -->
+    <div class="memoryCardExtreme image3-1" id="image4"> <!-- card 7 -->
       <img class="front-face" src="./assets/images/image4.jpeg" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
 
-    <div class="memoryCard image3-2" id="image4"> <!-- card 8 -->
+    <div class="memoryCardExtreme image3-2" id="image4"> <!-- card 8 -->
       <img class="front-face" src="./assets/images/image4.jpeg" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
 
-    <div class="memoryCard image4-1" id="image5"> <!-- card 9 -->
+    <div class="memoryCardExtreme image4-1" id="image5"> <!-- card 9 -->
       <img class="front-face" src="./assets/images/images5.jpg" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
 
-    <div class="memoryCard image4-2" id="image5"> <!-- card 10 -->
+    <div class="memoryCardExtreme image4-2" id="image5"> <!-- card 10 -->
       <img class="front-face" src="./assets/images/images5.jpg" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
 
-    <div class="memoryCard image5-1" id="image6"> <!-- card 11 -->
+    <div class="memoryCardExtreme image5-1" id="image6"> <!-- card 11 -->
       <img class="front-face" src="./assets/images/image6.jpg" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
 
-    <div class="memoryCard image5-2" id="image6"> <!-- card 12 -->
+    <div class="memoryCardExtreme image5-2" id="image6"> <!-- card 12 -->
       <img class="front-face" src="./assets/images/image6.jpg" alt="defultFront">
       <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
     </div>
+
+    <div class="memoryCardExtreme image6-1" id="image6"> <!-- card 11 -->
+      <img class="front-face" src="./assets/images/image6.jpg" alt="defultFront">
+      <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
+    </div>
+
+    <div class="memoryCardExtreme image6-2" id="image6"> <!-- card 12 -->
+      <img class="front-face" src="./assets/images/image6.jpg" alt="defultFront">
+      <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
+    </div>
+
+    <div class="memoryCardExtreme image7-1" id="image6"> <!-- card 11 -->
+      <img class="front-face" src="./assets/images/image6.jpg" alt="defultFront">
+      <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
+    </div>
+
+    <div class="memoryCardExtreme image7-2" id="image6"> <!-- card 12 -->
+      <img class="front-face" src="./assets/images/image6.jpg" alt="defultFront">
+      <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
+    </div>
+
+    <div class="memoryCardExtreme image8-1" id="image6"> <!-- card 11 -->
+      <img class="front-face" src="./assets/images/image6.jpg" alt="defultFront">
+      <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
+    </div>
+
+    <div class="memoryCardExtreme image8-2" id="image6"> <!-- card 12 -->
+      <img class="front-face" src="./assets/images/image6.jpg" alt="defultFront">
+      <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
+    </div>
+
+    <div class="memoryCardExtreme image9-1" id="image6"> <!-- card 11 -->
+      <img class="front-face" src="./assets/images/image6.jpg" alt="defultFront">
+      <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
+    </div>
+
+    <div class="memoryCardExtreme image9-2" id="image6"> <!-- card 12 -->
+      <img class="front-face" src="./assets/images/image6.jpg" alt="defultFront">
+      <img class="back-face" src="./assets/images/1080a4bd1a33cec92019fab5efb3995d.png" alt="cardBack">
+    </div>
+
   </div>
   </div> 
   </section>
 </div>
-<div class="">
+<div class="resetbutton is-center">
 <button class="reset pure-button" onclick="restartGame()"> Reset </button>
 </div>
 
@@ -204,6 +170,6 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="script.js"></script> 
+    <script src="scriptx.js"></script> 
   </body>
 </html>

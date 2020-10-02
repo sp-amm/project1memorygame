@@ -8,8 +8,19 @@
     /*margin auto destroys the positioning of all other elements for small screen*/
     margin: auto;
     perspective: 1000px;
-    /*border: solid;*/
-    
+    /*border: solid;*/  
+}
+
+/*changes the style og the extreme level board*/
+.gameBoardExtreme {
+    width: 640px;
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    /*margin auto destroys the positioning of all other elements for small screen*/
+    margin: auto;
+    perspective: 1000px;
+    /*border: solid;*/  
 }
 
 
@@ -29,9 +40,27 @@ img {
     transform-style: preserve-3d;
     transition: transform .5s;
 }
+
 .memoryCard:active {
     transform: scale(.97);
 }
+
+/*Styling for extreme level*/
+.memoryCardExtreme {
+    width: calc(20% - 10px);
+    height: 20% ;
+    /*position: relative;*/
+    margin: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+/*Styling for extreme level*/
+.memoryCardExtreme:active {
+    transform: scale(.97);
+}
+
 .back-face, .front-face {
     width: 100%;
     height: 100%;
@@ -45,6 +74,12 @@ img {
 .memoryCard.flip {
     transform: rotateY(180deg);
 }
+
+/*Styling for Extreme level*/
+.memoryCardExtreme.flip {
+    transform: rotateY(180deg);
+}
+
 .hidden {
     opacity: 0;
 }
@@ -53,6 +88,11 @@ img {
     .gameBoard{
       width: 320px;
       height: 320px;
+    }
+
+    .gameBoardExtreme{
+        width: 320px;
+        height: 640px; 
     }
 
     .back-face, .front-face {

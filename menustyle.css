@@ -5,19 +5,17 @@
     height: 640px;
     display: flex;
     flex-wrap: wrap;
-    /*margin auto destroys the positioning of all other elements for small screen*/
     margin: auto;
     perspective: 1000px;
     /*border: solid;*/  
 }
 
-/*changes the style og the extreme level board*/
+/*changes the game board for the extreme level board*/
 .gameBoardExtreme {
     width: 640px;
     height: 640px;
     display: flex;
     flex-wrap: wrap;
-    /*margin auto destroys the positioning of all other elements for small screen*/
     margin: auto;
     perspective: 1000px;
     /*border: solid;*/  

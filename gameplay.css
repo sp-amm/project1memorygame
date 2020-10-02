@@ -25,6 +25,7 @@ li{
 }
 nav .logo{
   color:black;
+  display: flex;
   font-size: 30px;
   font-weight: 600;
   letter-spacing: -1px;
@@ -63,6 +64,11 @@ nav .menu-icon{
 nav .menu-icon span{
   display: none;
 }
+
+.homebtn {
+  margin-bottom: 20%;
+}
+
 @media (max-width: 1245px) {
   nav{
     padding: 0 50px;
@@ -200,7 +206,7 @@ img {
 .resetbutton {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 30px;
   margin-bottom: 40px;
 }
 
@@ -248,7 +254,7 @@ img {
   opacity: 0;
 }
 
-/*Styling or Game Over Pop up modal 
+/*Styling for Game Over Pop up modal 
 - Courtesy of Youtube tutorial by Web Dev Simplified*/
 .modal{
   position: fixed;

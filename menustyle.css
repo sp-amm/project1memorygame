@@ -43,7 +43,18 @@ img {
     transform: scale(.97);
 }
 
-/*Styling for extreme level*/
+/*Styling for level 2*/
+.memoryCardLevel2 {
+    width: calc(25% - 10px);
+    height: 25% ;
+    /*position: relative;*/
+    margin: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+/*Styling for level 3 and extreme level*/
 .memoryCardExtreme {
     width: calc(20% - 10px);
     height: 20% ;

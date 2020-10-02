@@ -1,4 +1,3 @@
-
 let hasFlippedCard = false;
 let lockBoard = false; //stops user spam clicking
 let firstCard;
@@ -71,27 +70,29 @@ function shuffle(){
 
 }; //immediate function
 
-let time 
-//Countdown timer for time trial
+
+//Timer
 var timerInterval;
 function startTimer(){   
-        time = 30; //Sets time
+    let time = 0;
         timerInterval = setInterval(function(){
-        document.getElementById("timer").innerHTML = time //Displays time
-        time --; //counts down
-        if(time == -1){ //Stops timer when it reads zero
-            cards.forEach(card => card.removeEventListener('click',flipCard)); //Removes the event listener 
-            clearInterval(timerInterval); //Clears the interval
-        if (document.getElementById("timer").innerHTML ==0){ //pop up displays when out of time and cards are remaining
-            openModal(modal);
-        }
+        document.getElementById("timer").innerHTML = time
+        time ++;
+        if(time == 1000){
+            clearInterval(timerInterval);
         }                    
     },1000);
 }
 startTimer()
 
+
+
 //makes game over pop up display when timer zero  & when cards are remaining
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
+
+if(remain ==0){
+    openModal(modal);
+};
 
 //button to close Game over pop up
 closeModalButtons.forEach(button => {

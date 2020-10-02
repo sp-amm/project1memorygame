@@ -1,9 +1,8 @@
-
 let hasFlippedCard = false;
 let lockBoard = false; //stops user spam clicking
 let firstCard;
 let secondCard;
-var remain = 20; //CHANGE THIS FOR OTHERS
+var remain = 16; //CHANGE THIS FOR OTHERS
 
 
 const cards = document.querySelectorAll('.memoryCardExtreme'); //selects all cards
@@ -65,33 +64,35 @@ function resetBoardstate(){
 //runs on start up
 function shuffle(){
     cards.forEach(card => {
-        let random = Math.floor(Math.random() * 20); //CHANGE THIS FOR OTHER LEVELS
+        let random = Math.floor(Math.random() * 16); //CHANGE THIS FOR OTHER LEVELS
         card.style.order = random;
     });
 
 }; //immediate function
 
-let time 
-//Countdown timer for time trial
+
+//Timer
 var timerInterval;
 function startTimer(){   
-        time = 30; //Sets time
+    let time = 0;
         timerInterval = setInterval(function(){
-        document.getElementById("timer").innerHTML = time //Displays time
-        time --; //counts down
-        if(time == -1){ //Stops timer when it reads zero
-            cards.forEach(card => card.removeEventListener('click',flipCard)); //Removes the event listener 
-            clearInterval(timerInterval); //Clears the interval
-        if (document.getElementById("timer").innerHTML ==0){ //pop up displays when out of time and cards are remaining
-            openModal(modal);
-        }
+        document.getElementById("timer").innerHTML = time
+        time ++;
+        if(time == 1000){
+            clearInterval(timerInterval);
         }                    
     },1000);
 }
 startTimer()
 
+
+
 //makes game over pop up display when timer zero  & when cards are remaining
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
+
+if(remain ==0){
+    openModal(modal);
+};
 
 //button to close Game over pop up
 closeModalButtons.forEach(button => {
@@ -141,7 +142,7 @@ function restartGame(){
     time = 0;
     clearInterval(timerInterval);
     document.getElementById("timer").innerHTML = time;
-    remain= 20;
+    remain= 16;
     document.getElementById("remaining").innerHTML = remain;
     cards.forEach(card => card.classList.remove('flip'));
     setTimeout(() => {
@@ -154,7 +155,7 @@ shuffle();
     
  //giphy api key = JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb
     
-    var gameNumber = 10;
+    var gameNumber = 8;
     
     var queryurl = "https://api.giphy.com/v1/gifs/trending?api_key=JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb&tag=&rating=g&limit=" + gameNumber;
 

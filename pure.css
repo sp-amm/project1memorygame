@@ -154,6 +154,7 @@ a.pure-button-primary {
     font-size: 800%;
     line-height: 100%;
     justify-content: center;
+    display: flex;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     padding-top: 0%;

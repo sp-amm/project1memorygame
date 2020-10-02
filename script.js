@@ -69,7 +69,7 @@ function shuffle(){
         card.style.order = random;
     });
 
-})(); //immediate function
+}; //immediate function
 
 
 
@@ -159,3 +159,27 @@ shuffle();
         };
 
         setImg();
+
+        
+        //NASA API Query to set back face of the cards to space image of the day.
+        var querynasaurl =  "https://api.nasa.gov/planetary/apod?api_key=gvVohqUVbtkSp9QeSHaXWrMi9fkSXAdB5wQcHqRW"
+        
+        
+        $.ajax({
+            url: querynasaurl,
+            type: "GET",
+        
+    
+            }).then(function(response) {
+                console.log(response);
+                var backgroundimg = response.url;
+                
+                for (i=0; i <= gameNumber; i++){
+           
+                    var imgLocation = localStorage.getItem("image" + i);
+                    $(".image" + i + "-1").find(".back-face").attr("src", backgroundimg);
+                    $(".image" + i + "-2").find(".back-face").attr("src", backgroundimg);
+        
+                    }
+                
+            });

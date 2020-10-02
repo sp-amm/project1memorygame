@@ -17,6 +17,11 @@ nav{
   justify-content: space-between;
   height: 70px;
   padding: 0 100px;
+  width: 100%;
+}
+
+li{
+  display: inline-block;
 }
 nav .logo{
   color:black;
@@ -29,7 +34,7 @@ nav .logo{
 
 }
 nav .nav-items{
-  display: flex;
+  display: inline-block;
   flex: 1;
   padding: 0 0 0 40px;
 }
@@ -66,7 +71,8 @@ nav .menu-icon span{
 @media (max-width: 1140px){
   nav{
     padding: 0px;
-    position: absolute;
+    /*removed abolute position to stop it and game container overlapping
+    /*position: absolute;*/
   }
   nav .logo{
     flex: 2;
@@ -95,6 +101,7 @@ nav .menu-icon span{
   nav .nav-items li a{
     font-size: 20px;
   }
+  
   nav form{
     position: absolute;
     top: 80px;
@@ -136,31 +143,81 @@ nav .logo.space{
     font-size: 16px;
   }
 }
+
+@media (max-width: 640px){
+
+}
+
+/*This is disabled because it stops the container 
+shrinking with the screen size 
 /*for content */
-.content{
+/* /*.content{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-}
+ display: flex;
+}*/
 
+
+
+.center{
+  justify-content: center;
+}
 /* start of gameboard css */
 
-.gameBoard {
+/*.gameBoard {
   width: 640px;
   height: 640px;
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  perspective: 1000px;
-}
+  perspective: 1000px;}*/
+
+
 body {
   height: 100vh;
 }
-img {
-  width: 100px;
+
+.content{
+  margin-top: 5%;
 }
+
+img {
+  border-radius: 20%;
+}
+
+/*This styles the button changes the yahoo pure css button styling*/
+.pure-button {
+  background-color: #025509;
+  color: rgb(246, 245, 250);
+  padding: 0.5em 1.5em;
+  border-radius: 10px;
+  
+}
+
+/*This class is used to center and position the reset button*/
+.resetbutton {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.scorespacer{
+  margin: 20%;
+}
+
+.footer {
+    background: #111;
+    position: fixed;
+    margin-top: 5px;
+    padding-top: 5px;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+
 .memoryCard {
   width: calc(25% - 10px);
   height: 33% ;

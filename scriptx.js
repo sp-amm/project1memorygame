@@ -3,10 +3,10 @@ let hasFlippedCard = false;
 let lockBoard = false; //stops user spam clicking
 let firstCard;
 let secondCard;
-var remain = 12; //CHANGE THIS FOR OTHERS
+var remain = 20; //CHANGE THIS FOR OTHERS
 
 
-const cards = document.querySelectorAll('.memoryCard'); //selects all cards
+const cards = document.querySelectorAll('.memoryCardExtreme'); //selects all cards
 cards.forEach(card => card.addEventListener('click',flipCard)); //adds event listener for cards
 
 
@@ -65,27 +65,61 @@ function resetBoardstate(){
 //runs on start up
 function shuffle(){
     cards.forEach(card => {
-        let random = Math.floor(Math.random() * 12); //CHANGE THIS FOR OTHER LEVELS
+        let random = Math.floor(Math.random() * 20); //CHANGE THIS FOR OTHER LEVELS
         card.style.order = random;
     });
 
 }; //immediate function
 
-
-
-//Timer
+let time 
+//Countdown timer for time trial
 var timerInterval;
 function startTimer(){   
-    let time = 0;
+        time = 30; //Sets time
         timerInterval = setInterval(function(){
-        document.getElementById("timer").innerHTML = time
-        time ++;
-        if(time == 1000){
-            clearInterval(timerInterval);
+        document.getElementById("timer").innerHTML = time //Displays time
+        time --; //counts down
+        if(time == -1){ //Stops timer when it reads zero
+            cards.forEach(card => card.removeEventListener('click',flipCard)); //Removes the event listener 
+            clearInterval(timerInterval); //Clears the interval
+        if (document.getElementById("timer").innerHTML ==0){ //pop up displays when out of time and cards are remaining
+            openModal(modal);
+        }
         }                    
     },1000);
 }
 startTimer()
+
+//makes game over pop up display when timer zero  & when cards are remaining
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+
+//button to close Game over pop up
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal');
+        closeModal(modal);
+    });
+});
+
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active');
+    modals.forEach(modal => {
+        closeModal(modal);
+    });
+});
+
+function openModal(modal) {
+    if (modal==null) return;
+    modal.classList.add('active');
+    overlay.classList.add('active');
+};
+
+function closeModal(modal){
+    if (modal==null) return;
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+}
+ 
 
 //Move counter
 var moves=0;
@@ -104,12 +138,10 @@ function restartGame(){
     console.log("working")
     score = 0;
     document.getElementById("score").innerHTML = score;
-    moves = 0;
-    document.getElementById("moves").innerHTML = moves;
     time = 0;
     clearInterval(timerInterval);
     document.getElementById("timer").innerHTML = time;
-    remain= 12;
+    remain= 20;
     document.getElementById("remaining").innerHTML = remain;
     cards.forEach(card => card.classList.remove('flip'));
     setTimeout(() => {
@@ -122,7 +154,7 @@ shuffle();
     
  //giphy api key = JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb
     
-    var gameNumber = 6;
+    var gameNumber = 10;
     
     var queryurl = "https://api.giphy.com/v1/gifs/trending?api_key=JitPy4nJ4f7RAjv9P6V2YfrZqtdpPymb&tag=&rating=g&limit=" + gameNumber;
 
@@ -185,3 +217,7 @@ shuffle();
                     }
                 
             });
+
+    
+
+

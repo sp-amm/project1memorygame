@@ -236,7 +236,8 @@ img {
 
   .memoryCard:active {
   transform: scale(.97);
-}
+}}
+
 .back-face, .front-face {
   width: 100%;
   height: 100%;
@@ -270,16 +271,16 @@ img {
   margin: 10px 0;
 } */
  
-.container{
+/*.container{
   width: 60%;
   margin: auto;
   overflow: hidden;
 /*   background: skyblue; */
  /*  margin-top: 20px; */
-  padding:auto;
+/*  padding:auto;
   padding-top: 20px;
 
-}
+}*/
 
 /* .container ul{
   padding: 0px;

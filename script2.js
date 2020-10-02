@@ -5,7 +5,7 @@ let secondCard;
 var remain = 16; //CHANGE THIS FOR OTHERS
 
 
-const cards = document.querySelectorAll('.memoryCardExtreme'); //selects all cards
+const cards = document.querySelectorAll('.memoryCardLevelTwo'); //selects all cards
 cards.forEach(card => card.addEventListener('click',flipCard)); //adds event listener for cards
 
 

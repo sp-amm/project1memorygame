@@ -71,21 +71,55 @@ function shuffle(){
 
 }; //immediate function
 
-
+let time 
 //Countdown timer for time trial
 var timerInterval;
 function startTimer(){   
-    let time = 30; //Sets time
+        time = 30; //Sets time
         timerInterval = setInterval(function(){
         document.getElementById("timer").innerHTML = time //Displays time
         time --; //counts down
-        if(time == -1){ //If the time is zero
+        if(time == -1){ //Stops timer when it reads zero
             cards.forEach(card => card.removeEventListener('click',flipCard)); //Removes the event listener 
             clearInterval(timerInterval); //Clears the interval
+        if (document.getElementById("timer").innerHTML ==0){ //pop up displays when out of time and cards are remaining
+            openModal(modal);
+        }
         }                    
     },1000);
 }
 startTimer()
+
+//makes game over pop up display when timer zero  & when cards are remaining
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+
+//button to close pop up
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal');
+        closeModal(modal);
+    });
+});
+
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active');
+    modals.forEach(modal => {
+        closeModal(modal);
+    });
+});
+
+function openModal(modal) {
+    if (modal==null) return;
+    modal.classList.add('active');
+    overlay.classList.add('active');
+};
+
+function closeModal(modal){
+    if (modal==null) return;
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+}
+ 
 
 //Move counter
 var moves=0;
@@ -183,3 +217,7 @@ shuffle();
                     }
                 
             });
+
+    
+
+

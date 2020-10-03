@@ -105,6 +105,10 @@ img {
     transform: rotateY(180deg);
 }
 
+.memoryCardLevelTwo.flip {
+    transform: rotateY(180deg);
+}
+
 .hidden {
     opacity: 0;
 

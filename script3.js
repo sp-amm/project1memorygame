@@ -40,6 +40,9 @@ function checkMatch (){
         secondCard.removeEventListener('click', flipCard)
      
         remain=remain -2; // removes from number from remaining cards
+        if (remain ==0){
+            openModal(modal);}
+        
         document.getElementById("remaining").innerHTML = remain; //pushes back to remaining cards
         
         tallyScore(); //Tallys the score
@@ -121,6 +124,36 @@ function closeModal(modal){
     overlay.classList.remove('active');
 }
  
+//makes game over pop up display when timer zero  & when cards are remaining
+
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+
+//button to close Game over pop up
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal');
+        closeModal(modal);
+    });
+});
+
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active');
+    modals.forEach(modal => {
+        closeModal(modal);
+    });
+});
+
+function openModal(modal) {
+    if (modal==null) return;
+    modal.classList.add('active');
+    overlay.classList.add('active');
+};
+
+function closeModal(modal){
+    if (modal==null) return;
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+}
 
 //Move counter
 var moves=0;
